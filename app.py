@@ -17,7 +17,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# @app.route("/")
+@app.route("/")
+def main():
+    flask("main function")
+    return render_template("items.html")
+
+
 @app.route("/get_items")
 def get_items():
     return flash("connection successful")
