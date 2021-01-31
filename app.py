@@ -1,7 +1,5 @@
 import os
-from flask import (
-                    Flask, flash, render_template, redirect,
-                    request, url_for)
+from flask import (Flask, flash, render_template, redirect, request, url_for)
 from flask_pymongo import PyMongo
 # from bson.objectid import ObjectId
 # from werkzeug.security import generate_password_hash, chech_password_hash
@@ -18,11 +16,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def main():
-    flask("main function")
-    return render_template("items.html")
-
-
 @app.route("/get_items")
 def get_items():
     return flash("connection successful")
