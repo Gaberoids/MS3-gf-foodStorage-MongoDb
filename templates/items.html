@@ -1,38 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3> All Food Items </h3>
+
+{% if items_l|length > 0 %}
+
+<!-- table template from https://getbootstrap.com/docs/4.0/content/tables/ -->
 <div class="table-responsive">
     <table class="table">
-        <caption>List of users</caption>
+        <caption> List of all food storage items </caption>
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Food Item</th>
+                <th scope="col">Details</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Expiration Date</th>
             </tr>
         </thead>
+        {% for itm in items_l %}
         <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <th scope="row">{{ itm.item }}</th>
+                <td>{{ itm.item_details }}</td>
+                <td>{{ itm.quantity }}</td>
+                <td>{{ itm.expiration_date }}</td>
             </tr>
         </tbody>
+        {% endfor %}
     </table>
 </div>
-
+{% else %}
+    <h3> Food items not found </h3>
+{% endif %}
 {% endblock%}

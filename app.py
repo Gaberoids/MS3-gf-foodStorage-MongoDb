@@ -18,7 +18,27 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_items")
 def get_items():
-    return flash("connection successful")
+    print("caraca")
+    flash('flashfreaking message')
+    items_list = list(mongo.db.items.find())
+    return render_template("items.html", items_l=items_list)
+
+
+@app.route('/add_item', methods=["GET", "POST"])
+def add_item():
+    print("works out of if")
+    if request.method == "POST":
+        print("works INSIDE of if")
+        new_item = {
+            "item": request.form.get("n_item"),
+            "item_details": request.form.get("n_item_details"),
+            "quantity": request.form.get("n_quantity"),
+            "expiration_date": request.form.get("n_expiration_date")
+        }
+        mongo.db.items.insert_one(new_item)
+        flash("Food item successfully added")
+        return redirect(url_for('get_items'))
+    return render_template("add_item.html")
 
 
 if __name__ == "__main__":

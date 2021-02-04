@@ -43,3 +43,25 @@ We continually tweak and adjust this template to help give you the best experien
 --------
 
 Happy coding!
+
+
+
+
+- Remove flatpicker
+gitpod /workspace/MS2-gf-foodStorage-MongoDb $ gitpod /workspace/MS2-gf-foodStorage-MongoDb $ gitpod /wogitpod /workspace/MS2-gf-foodStorage-MongoDb $ npm i flatpickr --save
+
+npm WARN saveError ENOENT: no such file or directory, open '/workspace/MS2-gf-foodStorage-MongoDb/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/workspace/MS2-gf-foodStorage-MongoDb/package.json'
+npm WARN MS2-gf-foodStorage-MongoDb No description
+npm WARN MS2-gf-foodStorage-MongoDb No repository field.
+npm WARN MS2-gf-foodStorage-MongoDb No README data
+npm WARN MS2-gf-foodStorage-MongoDb No license field.
+
++ flatpickr@4.6.9
+added 1 package from 1 contributor and audited 1 package in 0.395s
+found 0 vulnerabilities
+
+_------
+validation of datepicker on the add_item 
+datepicker html built in is not supported on safari and internet exprorer
