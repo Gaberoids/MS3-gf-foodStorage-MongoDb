@@ -1,7 +1,7 @@
 import os
 from flask import (Flask, flash, render_template, redirect, request, url_for)
 from flask_pymongo import PyMongo
-# from bson.objectid import ObjectId
+from bson.objectid import ObjectId
 # from werkzeug.security import generate_password_hash, chech_password_hash
 if os.path.exists("env.py"):
     import env
@@ -18,7 +18,6 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_items")
 def get_items():
-    print("caraca")
     flash('flashfreaking message')
     items_list = list(mongo.db.items.find())
     return render_template("items.html", items_l=items_list)
@@ -26,9 +25,7 @@ def get_items():
 
 @app.route('/add_item', methods=["GET", "POST"])
 def add_item():
-    print("works out of if")
     if request.method == "POST":
-        print("works INSIDE of if")
         new_item = {
             "item": request.form.get("n_item"),
             "item_details": request.form.get("n_item_details"),
@@ -39,6 +36,22 @@ def add_item():
         flash("Food item successfully added")
         return redirect(url_for('get_items'))
     return render_template("add_item.html")
+
+
+@app.route("/edit_item/<edit_item_id>", methods=["GET", "POST"])
+def edit_item(edit_item_id):
+    if request.method == "POST":
+        edited_item = {
+            "item": request.form.get("e_item"),
+            "item_details": request.form.get("e_item_description"),
+            "quality": request.form.get("e_quantity"),
+            "expiration_date": request.form.get("e_expiration_date")
+        }
+        mongo.db.items.update({"_id": ObjectId(edit_item_id)}, edited_item)
+        flash("Food item successfuly updated")
+
+    edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
+    return render_template('edit_item.html', itm=edit_i)
 
 
 if __name__ == "__main__":

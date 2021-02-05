@@ -58,6 +58,7 @@ npm WARN MS2-gf-foodStorage-MongoDb No repository field.
 npm WARN MS2-gf-foodStorage-MongoDb No README data
 npm WARN MS2-gf-foodStorage-MongoDb No license field.
 
+Remove
 + flatpickr@4.6.9
 added 1 package from 1 contributor and audited 1 package in 0.395s
 found 0 vulnerabilities
