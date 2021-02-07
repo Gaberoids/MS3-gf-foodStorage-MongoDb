@@ -22,7 +22,7 @@
         <tbody>
             <tr>
                 <td>
-                    <!-- <a href=" url_for('delete_item', d_item_id=itm._id) " class="btn">Done</a> -->
+                    <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="btn">Delete</a>
                     <a href="{{ url_for('edit_item', edit_item_id=itm._id) }}" class="btn">Edit</a>
                 </td>
                 <th scope="row">{{ itm.item }}</th>

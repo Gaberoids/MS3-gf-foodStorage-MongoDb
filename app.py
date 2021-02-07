@@ -18,7 +18,6 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_items")
 def get_items():
-    flash('flashfreaking message')
     items_list = list(mongo.db.items.find())
     return render_template("items.html", items_l=items_list)
 
@@ -43,8 +42,8 @@ def edit_item(edit_item_id):
     if request.method == "POST":
         edited_item = {
             "item": request.form.get("e_item"),
-            "item_details": request.form.get("e_item_description"),
-            "quality": request.form.get("e_quantity"),
+            "item_details": request.form.get("e_item_details"),
+            "quantity": request.form.get("e_quantity"),
             "expiration_date": request.form.get("e_expiration_date")
         }
         mongo.db.items.update({"_id": ObjectId(edit_item_id)}, edited_item)
@@ -52,6 +51,14 @@ def edit_item(edit_item_id):
 
     edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
     return render_template('edit_item.html', itm=edit_i)
+
+
+@app.route('/delete_item/<delete_item_id>', methods=["GET", "POST"])
+def delete_item(delete_item_id):
+    print("delete function")
+    mongo.db.items.remove({"_id": ObjectId(delete_item_id)})
+    flash("Item successfully deleted")
+    return redirect(url_for("get_items"))
 
 
 if __name__ == "__main__":
