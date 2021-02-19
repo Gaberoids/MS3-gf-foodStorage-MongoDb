@@ -1,4 +1,73 @@
+/* ---------------------------------------------- Base.html css */
+
 .site-background {
-      background: lightblue url("../img/background-img-field.jpg") no-repeat fixed center; 
+    background: lightblue url("../img/background-img-field.jpg") no-repeat fixed center; 
     background-size: cover;
     }
+
+.t-background {
+    background-color: rgba(248, 249, 250, 0.5);
+}
+
+/* navbar customizations */
+#navbar-c {
+    color: rgb(144 82 53 / 83%);
+    box-shadow: 1px 0px 8px 0px #3c1d1d;
+}
+
+.navbar-light .navbar-brand {
+    color: rgb(144 82 53 / 83%);
+}
+
+.navbar-light .navbar-brand:hover {
+    color: rgb(144 82 53 / 83%);
+    font-weight: bolder;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(144 82 53 / 83%);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(144 82 53 / 83%);
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(80 43 25);
+}
+
+/* ---------------------------------------------- other html css */
+
+h3 {
+    color:#293f7dfa;
+    text-align: center;
+    text-shadow: -2px -2px 3px white, 0 1px white, 1px 0 white, 0 -1px white, 0px 0px 10px rgba(248, 249, 250), 0px 0px 10px rgba(248, 249, 250), 0px 0px 10px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 2.5px rgba(248, 249, 250), 0px 0px 2.5px rgba(248, 249, 250);
+}
+
+.box-background {
+    background-color: rgba(248, 249, 250, 0.56);
+    color:#293f7dfa;
+    font-weight: bold;
+    border-radius: 7%;
+    box-shadow: -3px 3px 8px #3c1d1d;
+
+}
+
+.form-button {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 20px;
+}
+
+.form-button button {
+    background-color: #9a3044;
+    width: 160px;
+
+}
+/* ---------------------------------------------- edit add pages css */
+
+.box-padding {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+

@@ -1,28 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Add Food Item</h3>
+<h3 class="pt-5">Add Food Item</h3>
 
 <!-- form template from https://getbootstrap.com/docs/4.0/components/forms/ -->
-<form method="POST" action="{{ url_for('add_item') }}">
-    <div class="form-group">
-        <label for="n_item">Food Item</label>
-        <input type="text" class="form-control" id="n_item" name="n_item" placeholder="Ex: Water, rice, Corn">
-    </div>
-    <div class="form-group">
-        <label for="n_quantity">Quantity</label>
-        <input type="text" class="form-control" id="n_quantity" name="n_quantity" placeholder="Ex: 3Kg, 4lbs, 12 bottles or 300ml each, ...">
-    </div>
-    <div class="form-group">
-        <label for="n_expiration_date">Expiration Date</label>
-        <input type="date" name="n_expiration_date" id="n_expiration_date" placeholder="MM/DD/YYY" class="form-control"></div>
-    <div class="form-group">
-        <label for="n_item_details">Example textarea</label>
-        <textarea class="form-control" id="n_item_details" name="n_item_details" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-secondary">Submit</button>
-<script>
-</script>
-    
-</form>
+<div class="p-5">
+
+    <form method="POST" class="box-background" action="{{ url_for('add_item') }}">
+
+        <div class="box-padding">
+            <div class="container">
+                <div class="form-group">
+                    <label for="n_item">Food Item</label>
+                    <input type="text" class="form-control" id="n_item" name="n_item"
+                        placeholder="Ex: Water, rice, Corn">
+                </div>
+                <div class="form-group">
+                    <label for="n_quantity">Quantity</label>
+                    <input type="text" class="form-control" id="n_quantity" name="n_quantity"
+                        placeholder="Ex: 3Kg, 4lbs, 12 bottles or 300ml each, ...">
+                </div>
+                <div class="form-group">
+                    <label for="n_expiration_date">Expiration Date</label>
+                    <input type="date" name="n_expiration_date" id="n_expiration_date" placeholder="MM/DD/YYY"
+                        class="form-control"></div>
+                <div class="form-group">
+                    <label for="n_item_details">Example textarea</label>
+                    <textarea class="form-control" id="n_item_details" name="n_item_details" rows="3"></textarea>
+                </div>
+                <div class="form-button">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
 {% endblock %}
