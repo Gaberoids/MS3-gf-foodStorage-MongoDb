@@ -60,6 +60,10 @@ def delete_item(delete_item_id):
     flash("Item successfully deleted")
     return redirect(url_for("get_items"))
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
