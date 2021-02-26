@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!-- login template taken from https://epicbootstrap.com/snippets/login-form-dark -->
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> 
+{% endblock%}
+
+{% block content %}
+
+    <div class="login-dark">
+        <div style="padding-top: 15%;">
+        <form method="post" class="login-form">
+            <h2 class="sr-only">Register Form</h2>
+            <div class="illustration"><i class="icon ion-ios-personadd-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="registration_username" placeholder="Username"></div>
+            <div class="form-group"><input class="form-control" type="password" name="registration_password" placeholder="Password">
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Register</button></div>
+            <a href="{{ url_for('login') }}"
+                class="forgot">Already have an account? Login</a>
+        </form>
+        </div>
+    </div>
+  
+
+{% endblock %}
