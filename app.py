@@ -4,7 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -21,6 +21,18 @@ mongo = PyMongo(app)
 @app.route("/get_items")
 def get_items():
     items_list = list(mongo.db.items.find())
+    if session.get('user_session') is not None:
+        user_record_id = mongo.db.users.find_one(
+            {"username": session["user_session"].lower()})["_id"]
+        print("xxxxxx :", user_record_id)
+        print("xxxxxx :", items_list)
+        print("xxxxxx :", session["user_session"])
+        return render_template(
+            "items.html",
+            items_l=items_list,
+            profile_username=session["user_session"],
+            profile_id=user_record_id)
+
     return render_template("items.html", items_l=items_list)
 
 
@@ -44,42 +56,62 @@ def register():
             "registration_username").lower()
         flash("You've been regitered successfully!")
         return redirect(url_for(
-            "user_profile", profile_username=session["user_session"]))
+            "get_items", profile_username=session["user_session"]))
 
     return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # if request.method == "POST":
-    #     user_exist = mongo.db.users.find_one({
-    #         "username": request.form.get("login_username")})
-    #     # check if the user name doesnt exist
-    #     if user_exist:
-    #         if check_password_hash(user_exist["password"],request.form.get("login_password")):
-    #             session["user"] = request.form.get("login_username").lower()
-    #             flash("Welcome, {}".format(request.form.get("login_username")))
-    #             return redirect(url_for("user_profile", username=session["registered_user"]))
+    if request.method == "POST":
+        user_exist = mongo.db.users.find_one({
+            "username": request.form.get("login_username")})
+        # check if the user name doesnt exist
+        if user_exist:
+            if check_password_hash(user_exist[
+                    "password"], request.form.get("login_password")):
+                session["user_session"] = request.form.get(
+                    "login_username").lower()
+                flash("Welcome, {}".format(request.form.get("login_username")))
+                return redirect(url_for(
+                    "get_items", profile_username=session["user_session"]))
 
-    #     else:
-    #         # invalid password match
-    #         flash("Incorrect username and/or password")
-    #         return redirect(url_for("login"))
+        else:
+            # invalid password match
+            flash("Incorrect username and/or password")
+            return redirect(url_for("login"))
 
     return render_template("login.html")
 
 
-@app.route("/user_profile/<profile_username>")
-def user_profile(profile_username):
-    loggedin_user = mongo.db.users.find_one(
-        {"username": session["user_session"]})["username"]
-    if session["user_session"]:
-        items_list = list(mongo.db.items.find())
-        return render_template(
-            "user_profile.html", profile_username=loggedin_user,
-            items_l=items_list)
+# @app.route("/user_profile/<profile_username>")
+# def user_profile(profile_username):
+#     loggedin_user = mongo.db.users.find_one(
+#         {"username": session["user_session"]})["username"]
+#     if session["user_session"]:
+#         items_list = list(mongo.db.items.find())
+#         return render_template(
+#             "user_profile.html", profile_username=loggedin_user,
+#             items_l=items_list)
 
-    return redirect(url_for("login"))
+#     return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    if session.get('user_session') is not None:
+        session.pop("user_session")
+
+    flash("You were successfully logged out.")
+    return redirect(url_for("get_items"))
+
+
+@app.route("/delete_user/<delete_profile_id>")
+def delete_user(delete_profile_id):
+    session.pop("user_session")
+    mongo.db.users.remove({"_id": ObjectId(delete_profile_id)})
+    flash("Account successfully deleted")
+    return redirect(url_for("get_items"))
 
 
 @app.route('/add_item', methods=["GET", "POST"])
@@ -115,7 +147,6 @@ def edit_item(edit_item_id):
 
 @app.route('/delete_item/<delete_item_id>', methods=["GET", "POST"])
 def delete_item(delete_item_id):
-    print("delete function")
     mongo.db.items.remove({"_id": ObjectId(delete_item_id)})
     flash("Item successfully deleted")
     return redirect(url_for("get_items"))

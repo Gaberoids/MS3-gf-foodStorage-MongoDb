@@ -3,6 +3,8 @@
 .site-background {
     background: lightblue url("../img/background-img-field.jpg") no-repeat fixed center; 
     background-size: cover;
+    padding-bottom: 56px;
+    min-height: 800px;
     }
 
 .t-background {
@@ -70,7 +72,7 @@ h3 {
     background-color: orange;
     width: 160px;
 }
-/* ---------------------------------------------- edit add pages css */
+/* ---------------------------------------------- edit.html add.html pages css */
 
 .box-padding {
     padding-top: 40px;
@@ -153,4 +155,11 @@ h3 {
 
 .login-form {
     /* margin-top: 16%; */
+}
+
+
+/* ---------------------------------------------- Login css */
+
+.profile-box {
+    background-color: rgba(248, 249, 250, 0.5);
 }

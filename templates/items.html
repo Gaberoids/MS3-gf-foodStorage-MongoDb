@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% if session.user_session %}
+<div class="pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-7 col-sm-5 profile-box">
+                <h5 class=" pt-1"> {{ profile_username[0]|upper }}{{ profile_username[1:] }}'s Homepage!</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-7 col-sm-5 profile-box">
+                <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}">
+                    <!-- profile_id is defined(comes from) from get_items(). 
+                    user_id is defined here to be used by delete() -->
+                    <h5 class=" pt-1"> Delete Account {{ profile_id }}</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <h3 class="text-center pt-5"> All Food Items </h3>
 
 {% if items_l|length > 0 %}
