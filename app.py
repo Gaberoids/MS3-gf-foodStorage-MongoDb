@@ -24,9 +24,6 @@ def get_items():
     if session.get('user_session') is not None:
         user_record_id = mongo.db.users.find_one(
             {"username": session["user_session"].lower()})["_id"]
-        print("xxxxxx :", user_record_id)
-        print("xxxxxx :", items_list)
-        print("xxxxxx :", session["user_session"])
         return render_template(
             "items.html",
             items_l=items_list,

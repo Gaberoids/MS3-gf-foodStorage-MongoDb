@@ -1,22 +1,24 @@
 {% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+{% endblock%}
+
 {% block content %}
 
 {% if session.user_session %}
-<div class="pt-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-7 col-sm-5 profile-box">
-                <h5 class=" pt-1"> {{ profile_username[0]|upper }}{{ profile_username[1:] }}'s Homepage!</h5>
-            </div>
+<div class="">
+    <div class="profile-box">
+        <div class="">
+            <h5 class="user-profile-id pt-1"> {{ profile_username[0]|upper }}{{ profile_username[1:] }}'s Homepage!</h5>
         </div>
-        <div class="row">
-            <div class="col-7 col-sm-5 profile-box">
-                <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}">
-                    <!-- profile_id is defined(comes from) from get_items(). 
+        <hr class="hr-profile">
+        <div class="">
+            <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}" class="delete-acc-link">
+                <!-- profile_id is defined(comes from) from get_items(). 
                     user_id is defined here to be used by delete() -->
-                    <h5 class=" pt-1"> Delete Account {{ profile_id }}</h5>
-                </a>
-            </div>
+                <h6 class=" pt-1"> Delete Account</h6>
+            </a>
         </div>
     </div>
 </div>
@@ -28,34 +30,38 @@
 
 <!-- table template from https://getbootstrap.com/docs/4.0/content/tables/ -->
 <div class=" t-background m-5">
-<div class="table-responsive">
-    <table class="table">
-        <caption> List of all food storage items </caption>
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Food Item</th>
-                <th scope="col">Details</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Expiration Date</th>
-            </tr>
-        </thead>
-        {% for itm in items_l %}
-        <tbody>
-            <tr>
-                <td>
-                    <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="btn btn-danger">Delete</a>
-                    <a href="{{ url_for('edit_item', edit_item_id=itm._id) }}" class="btn btn-success">Edit</a>
-                </td>
-                <th scope="row">{{ itm.item }}</th>
-                <td>{{ itm.item_details }}</td>
-                <td>{{ itm.quantity }}</td>
-                <td>{{ itm.expiration_date }}</td>
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-</div>
+    <div class="table-responsive">
+        <table class="table">
+            <caption> List of all food storage items </caption>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Food Item</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Expiration Date</th>
+                </tr>
+            </thead>
+            {% for itm in items_l %}
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="table-button-box">
+                            <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d "><i
+                                    class="ion-ios-trash"></i></a>
+                            <a href="{{ url_for('edit_item', edit_item_id=itm._id) }}" class="table-icon-e"><i
+                                    class="ion-edit"></i></a>
+                        </div>
+                    </td>
+                    <th scope="row">{{ itm.item }}</th>
+                    <td>{{ itm.item_details }}</td>
+                    <td>{{ itm.quantity }}</td>
+                    <td>{{ itm.expiration_date }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
 </div>
 {% else %}
 <h3> Food items not found </h3>

@@ -1,3 +1,7 @@
+a:hover {
+    color: black;
+}
+
 /* ---------------------------------------------- Base.html css */
 
 .site-background {
@@ -37,10 +41,47 @@
     color: rgb(80 43 25);
 }
 
+/* ---------------------------------------------- All Items.html css */
+
+.profile-box {
+    padding: 15px 16px;
+    background-color: rgba(248, 249, 250, 0.5);
+    border-bottom: black;
+    display: inline-block;
+}
+
+.user-profile-id {
+    color: #5a5554;
+}
+
+hr.hr-profile {
+    margin: 5px 54px;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.3)
+}
+
+.delete-acc-link {
+    color: #5a5554;
+    text-align: center;
+}
+
+.table-button-box {
+    padding-left: 10%;
+}
+
+.table-button-box i {
+    padding-right: 20%;
+    font-size: 21px;
+}
+
+.table-icon-d,.table-icon-e{
+    color: #293f7dfa;
+}
+
 /* ---------------------------------------------- other html css */
 
 h3 {
-    color:#293f7dfa;
+    color: #883820fa;
     text-align: center;
     text-shadow: -2px -2px 3px white, 0 1px white, 1px 0 white, 0 -1px white, 0px 0px 10px rgba(248, 249, 250), 0px 0px 10px rgba(248, 249, 250), 0px 0px 10px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 5px rgba(248, 249, 250), 0px 0px 2.5px rgba(248, 249, 250), 0px 0px 2.5px rgba(248, 249, 250);
 }
@@ -160,6 +201,3 @@ h3 {
 
 /* ---------------------------------------------- Login css */
 
-.profile-box {
-    background-color: rgba(248, 249, 250, 0.5);
-}
