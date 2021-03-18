@@ -131,14 +131,14 @@ h3 {
 .login-dark form {
   max-width:320px;
   width:90%;
-  background-color:#1e2833;
+  background-color:rgba(248, 249, 250, 0.5);
   padding:40px;
   border-radius:4px;
   /* transform:translate(-50%, -50%); */
   /* position:absolute; */
   /* top:50%;
   left:50%; */
-  color:#fff;
+  color:black;
   margin: auto;
   box-shadow:3px 3px 4px rgba(0,0,0,0.2);
 }
@@ -147,7 +147,7 @@ h3 {
   text-align:center;
   padding:15px 0 20px;
   font-size:100px;
-  color:#2980ef;
+  color:#214a80;
 }
 
 .login-dark form .form-control {
@@ -180,7 +180,7 @@ h3 {
   display:block;
   text-align:center;
   font-size:12px;
-  color:#6f7a85;
+  color:#2b435c;
   opacity:0.9;
   text-decoration:none;
 }
