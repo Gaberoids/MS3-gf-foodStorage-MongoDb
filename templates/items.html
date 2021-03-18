@@ -45,6 +45,8 @@
             {% for itm in items_l %}
             <tbody>
                 <tr>
+                    <!-- if user is logged in, show buttons -->
+                    {% if session.user_session %}
                     <td>
                         <div class="table-button-box">
                             <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d "><i
@@ -53,6 +55,10 @@
                                     class="ion-edit"></i></a>
                         </div>
                     </td>
+                    {% else %}
+                    <td></td>
+                    {% endif %}
+
                     <th scope="row">{{ itm.item }}</th>
                     <td>{{ itm.item_details }}</td>
                     <td>{{ itm.quantity }}</td>
