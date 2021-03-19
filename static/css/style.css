@@ -2,6 +2,12 @@ a:hover {
     color: black;
 }
 
+.flash-message{
+    padding: 5px;
+    margin: 0;
+    color: #bedcfa;
+}
+
 /* ---------------------------------------------- Base.html css */
 
 .site-background {

@@ -40,7 +40,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("registration_username").lower()})
         if existing_user:
-            flash("This username already exist")
+            flash("This username already exist.")
             return redirect(url_for("register"))
 
         new_user = {
@@ -69,13 +69,13 @@ def login():
                     "password"], request.form.get("login_password")):
                 session["user_session"] = request.form.get(
                     "login_username").lower()
-                flash("Welcome, {}".format(request.form.get("login_username")))
+                flash("Welcome, {}!".format(request.form.get("login_username")))
                 return redirect(url_for(
                     "get_items", profile_username=session["user_session"]))
 
         else:
             # invalid password match
-            flash("Incorrect username and/or password")
+            flash("Incorrect username and/or password.")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -107,7 +107,7 @@ def logout():
 def delete_user(delete_profile_id):
     session.pop("user_session")
     mongo.db.users.remove({"_id": ObjectId(delete_profile_id)})
-    flash("Account successfully deleted")
+    flash("Account successfully deleted.")
     return redirect(url_for("get_items"))
 
 
@@ -121,7 +121,7 @@ def add_item():
             "expiration_date": request.form.get("n_expiration_date")
         }
         mongo.db.items.insert_one(new_item)
-        flash("Food item successfully added")
+        flash("Food item successfully added.")
         return redirect(url_for('get_items'))
     return render_template("add_item.html")
 
@@ -136,7 +136,7 @@ def edit_item(edit_item_id):
             "expiration_date": request.form.get("e_expiration_date")
         }
         mongo.db.items.update({"_id": ObjectId(edit_item_id)}, edited_item)
-        flash("Food item successfuly updated")
+        flash("Food item successfuly updated.")
         return redirect(url_for('get_items'))
 
     edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
@@ -146,7 +146,7 @@ def edit_item(edit_item_id):
 @app.route('/delete_item/<delete_item_id>', methods=["GET", "POST"])
 def delete_item(delete_item_id):
     mongo.db.items.remove({"_id": ObjectId(delete_item_id)})
-    flash("Item successfully deleted")
+    flash("Item successfully deleted.")
     return redirect(url_for("get_items"))
 
 
