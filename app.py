@@ -137,6 +137,7 @@ def edit_item(edit_item_id):
         }
         mongo.db.items.update({"_id": ObjectId(edit_item_id)}, edited_item)
         flash("Food item successfuly updated")
+        return redirect(url_for('get_items'))
 
     edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
     return render_template('edit_item.html', itm=edit_i)
