@@ -84,6 +84,13 @@ hr.hr-profile {
     color: #293f7dfa;
 }
 
+.table-cell-details {
+    max-width: 150px;
+    max-height: 150px;
+    word-wrap: break-word; 
+    overflow: auto;
+}
+
 /* ---------------------------------------------- other html css */
 
 h3 {
