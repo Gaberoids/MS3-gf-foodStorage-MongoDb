@@ -25,9 +25,9 @@
                     <input type="date" name="n_expiration_date" id="n_expiration_date" placeholder="MM/DD/YYY"
                         class="form-control"></div>
                 <div class="form-group">
-                    <label for="n_item_details">Details</label>
-                    <textarea class="form-control" id="n_item_details" name="n_item_details" rows="3"></textarea>
-                </div>
+                    <label for="item_details">Details</label>
+                    <textarea class="form-control" id="item_details" name="item_details" rows="3" maxlength="400"></textarea><span id="txt-length-left"><br></span><span id="errMsg"></span>
+                </div><span id="errMsg"></span>
                 <div class="form-button">
                     <button type="submit" class="btn btn-secondary submit-button">Submit</button>
                 </div>

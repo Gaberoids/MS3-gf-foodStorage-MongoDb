@@ -116,7 +116,7 @@ def add_item():
     if request.method == "POST":
         new_item = {
             "item": request.form.get("n_item"),
-            "item_details": request.form.get("n_item_details"),
+            "item_details": request.form.get("item_details"),
             "quantity": request.form.get("n_quantity"),
             "expiration_date": request.form.get("n_expiration_date")
         }
@@ -131,7 +131,7 @@ def edit_item(edit_item_id):
     if request.method == "POST":
         edited_item = {
             "item": request.form.get("e_item"),
-            "item_details": request.form.get("e_item_details"),
+            "item_details": request.form.get("item_details"),
             "quantity": request.form.get("e_quantity"),
             "expiration_date": request.form.get("e_expiration_date")
         }

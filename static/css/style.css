@@ -126,6 +126,10 @@ h3 {
     padding-bottom: 40px;
 }
 
+/* span for max-lenght error in areatext */
+#errMsg,#txt-length-left {
+    font-size: 12px;
+}
 /* ---------------------------------------------- Login css */
 /* login CSS taken from https://epicbootstrap.com/snippets/login-form-dark  */
  

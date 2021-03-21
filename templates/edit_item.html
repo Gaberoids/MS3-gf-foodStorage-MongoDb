@@ -23,9 +23,9 @@
                     <input type="date" value="{{ itm.expiration_date }}" name="e_expiration_date" id="e_expiration_date"
                         placeholder="MM/DD/YYY" class="form-control"></div>
                 <div class="form-group">
-                    <label for="e_item_details">Details</label>
-                    <textarea class="form-control" id="e_item_details" name="e_item_details"
-                        rows="3">{{ itm.item_details }}</textarea>
+                    <label for="item_details">Details</label>
+                    <textarea class="form-control" id="item_details" name="item_details"
+                       maxlength="400" rows="3">{{ itm.item_details }}</textarea><span id="txt-length-left"><br></span><span id="errMsg"></span>
                 </div>
                 <div class="form-button">
                     <a href="{{ url_for('get_items') }}" class="btn btn-secondary cancel-button">Cancel</a>
@@ -35,6 +35,7 @@
         </div>
     </form>
 </div>
+
 
 
 {% endblock %}
