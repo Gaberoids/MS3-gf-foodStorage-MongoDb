@@ -60,7 +60,9 @@
                     {% endif %}
 
                     <th scope="row">{{ itm.item }}</th>
-                    <td><div class="table-cell-details">{{ itm.item_details }}</div></td>
+                    <td>
+                        <div class="table-cell-details">{{ itm.item_details }}</div>
+                    </td>
                     <td>{{ itm.quantity }}</td>
                     <td>{{ itm.expiration_date }}</td>
                 </tr>
@@ -70,6 +72,10 @@
     </div>
 </div>
 {% else %}
-<h3> Food items not found </h3>
+<h3 style="font-size: small; margin: 20px 0;"> There are no food items to listed </h3>
+<br>
+<div class="d-flex justify-content-center ">
+    <a class="btn btn-secondary cancel-button" href="{{ url_for('get_items')}}">Refresh</a>
+</div>
 {% endif %}
 {% endblock%}

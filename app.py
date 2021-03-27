@@ -33,6 +33,21 @@ def get_items():
     return render_template("items.html", items_l=items_list)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    items_list = list(mongo.db.items.find({"$text": {"$search": query}}))
+    if session.get('user_session') is not None:
+        user_record_id = mongo.db.users.find_one(
+            {"username": session["user_session"].lower()})["_id"]
+        return render_template(
+            "items.html",
+            items_l=items_list,
+            profile_username=session["user_session"],
+            profile_id=user_record_id)
+    return render_template("items.html", items_l=items_list)
+
+
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
