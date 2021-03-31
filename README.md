@@ -39,11 +39,15 @@ __Link to wireframe:__
     - Notification and alert box before deleting items in the database or deleting profile.
     - Sort table based on expiration data.
     - To make expire items to stand out or generate notification and alerts when items expire.
+    - Validation to date field on other browsers than Chrome.
 
 ## Technologies Used
 
 [Bootstrap](https://getbootstrap.com/docs/4.0/utilities/display/) 
-    - The navigation bar (in all pages), the table, the login and registration pages.   
+    - The navigation bar (in all pages), the table, the login and registration pages.
+
+[Ionicons](https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css)
+- Source for website icons.  
 
 [Javascript](https://www.javascript.com/)
     - This technology was used to put a limit on the total number of characters on the areatext tag. 
@@ -55,7 +59,7 @@ __Link to wireframe:__
     - This was used to host and manage the database. 
 
 [Heroku](https://heroku.com)
-    - This was used to host the website. 
+    - Website hosting tool. 
 
 
 ## Testing
@@ -72,35 +76,39 @@ Non-automated tests
     6. Note that the menu item 'Add item' appear on the munu navigator.
     7. Note that the icons to edit and delete items now appear on the table.
 
-2. Register and validation:
+2. Register, validation and login:
     1. Go to the "Home" page (https://ms3-food-store.herokuapp.com/)
     2. On the menu navigator, click login.
     3. Click the link "Don't have an account? Register.".  
     4. Enter Username and password of your choice.
         - User won't be able to submit the form if the these inputs have less then 4 or more than 25 characters. 
-    5. User is created and taken to the homepage.TO BE CONTINUE...
+    5. User is created and taken to the homepage.
+    6. Click logout.
+    7. Go to login page.
+    8. Enter the Username and password from item number 4.
+        - User won't be able to submit the form if the these inputs have less then 4 or more than 25 characters. 
+    9. User is taken to homepage and his account information shows on the top left side of the screen.
+    10. Click "Delete account" and note that account is deleted (try to login but will get error) and message shows in blue to confirm.
 
 3. Search functionality:
-    1. Go to the "geniusSearch.html" page and type "Perger" inside the search box.
-    2. Note how the search returns many results.
-    3. Note that the search results are related to the key words "Perger" (typed by the user) plus "family" and "genealogy" (default key words).
-    4. Make sure the content of the page is presentable in all sizes of screen.
-    5. Make sure that the text box are working with all sizes of the screen by typing text in them and hitting enter.
+    1. Go to the "Home" page (https://ms3-food-store.herokuapp.com/)
+    2. On the menu navigator search box, type "rice".
+        - Note that food items that contains "rice" on "Food Item" and "Details" columns are return.
+    3. On the menu navigator search box, type a word that cannot be found in the "Food Item" and "Details" columns. For example, "politics".
+        - Note that food items are not returned. Instead the message "There are no food items to list" and the button "Refresh" shows.
+    4. Click the button "refresh" to return to homepage.
 
-3. Contact us functionality (Mandatory fields, email validation, send email):
-    1. Go to "https://gaberoids.github.io/genealogygenius/contact.html" .
-    2. Without typing anything click "Submit Inquiry".
-    3. Note alert a click ok.
-    4. Type something in the text box for email and submit.
-    5. Click ok and delete the email text.
-    6. Type something in the message and submit.
-    7. Click ok and add an email address to the email input box and submit. This time, you should get a message that confirms that an email has been sent out.
-    8. To confirm that the email was sent go to gmail.com, log in into gmail.com with the following credentials:
-        - User name: geniusgenealogy@gmail.com
-        - Password: codeacademyadmin
-    9. Note that an email was received from the website contact page.
-
-    (*CLARIFICATION NOTE: Testing screen size means -> by increasing and decreasing the browser window and using developer tools to test site on mobile view.*)
+3. Add, edit validation and delete item:
+    1. Go to the "Home" page (https://ms3-food-store.herokuapp.com/)
+    2. Login or create an account.
+    3. On the menu navigator, click "Add item".
+    3. Fill out the form
+        - User won't be able to submit the form with "Food Item" inputs with less then 3 or more than 49 characters. 
+        - User won't be able to submit the form with "Quantity" inputs with less then 2 or more than 49 characters. 
+        - User won't be able to enter more than 400 characters on the input field under "Details".
+        - User won't be able to submit the form with "Expiration dates" after year 2099. (This validation is only supported on Chrome browser) 
+    4. Click submit. Note that the item was added to the table. If you cannot see it, try search to it.
+    5. Click the "delete" icon by the new item and note that the item will no longer be found in the table.
 
 
 **The pages in this website will be more simple in the mobile view compared to desktop view. For example:**

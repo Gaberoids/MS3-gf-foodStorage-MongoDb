@@ -8,6 +8,17 @@ a:hover {
     color: #bedcfa;
 }
 
+.icon-flip {
+   display: inline-block;
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+h3 i {
+    margin: 0 0.3em;
+}
 /* ---------------------------------------------- Base.html css */
 
 .site-background {
@@ -84,7 +95,7 @@ hr.hr-profile {
     color: #293f7dfa;
 }
 
-.table-cell-details {
+.table-cell-limitations {
     max-width: 150px;
     max-height: 150px;
     word-wrap: break-word; 

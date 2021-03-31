@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+{% endblock%}
+
 {% block content %}
 
-<h3 class="pt-5">Add Food Item</h3>
+<h3 class="pt-5"><i class="ion-leaf"></i>Add Food Item<i class="ion-leaf icon-flip"></i></h3>
 
 <!-- form template from https://getbootstrap.com/docs/4.0/components/forms/ -->
 <div class="p-5">
@@ -17,12 +22,12 @@
                 </div>
                 <div class="form-group">
                     <label for="n_quantity">Quantity</label>
-                    <input type="text" class="form-control" id="n_quantity" name="n_quantity"
+                    <input type="text" class="form-control" id="n_quantity" name="n_quantity" minlength="2" maxlength="50"
                         placeholder="Ex: 3Kg, 4lbs, 12 bottles or 300ml each, ...">
                 </div>
                 <div class="form-group">
                     <label for="n_expiration_date">Expiration Date</label>
-                    <input type="date" name="n_expiration_date" id="n_expiration_date" placeholder="MM/DD/YYY"
+                    <input type="date" name="n_expiration_date" id="n_expiration_date" placeholder="MM/DD/YYYY" max="2099-12-31"
                         class="form-control"></div>
                 <div class="form-group">
                     <label for="item_details">Details</label>

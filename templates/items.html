@@ -24,7 +24,7 @@
 </div>
 {% endif %}
 
-<h3 class="text-center pt-5"> All Food Items </h3>
+<h3 class="text-center pt-5"><i class="ion-leaf"></i> All Food Items <i class="ion-leaf icon-flip"></i></h3>
 
 {% if items_l|length > 0 %}
 
@@ -59,9 +59,9 @@
                     <td></td>
                     {% endif %}
 
-                    <th scope="row">{{ itm.item }}</th>
+                    <th scope="row"><div class="table-cell-limitations">{{ itm.item }}</div></th>
                     <td>
-                        <div class="table-cell-details">{{ itm.item_details }}</div>
+                        <div class="table-cell-limitations">{{ itm.item_details }}</div>
                     </td>
                     <td>{{ itm.quantity }}</td>
                     <td>{{ itm.expiration_date }}</td>
@@ -72,7 +72,7 @@
     </div>
 </div>
 {% else %}
-<h3 style="font-size: small; margin: 20px 0;"> There are no food items to listed </h3>
+<h3 style="font-size: small; margin: 20px 0;"> There are no food items to list </h3>
 <br>
 <div class="d-flex justify-content-center ">
     <a class="btn btn-secondary cancel-button" href="{{ url_for('get_items')}}">Refresh</a>
