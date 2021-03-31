@@ -24,70 +24,61 @@ __User Stories:__
 
   
 __Link to wireframe:__     
-- [Click here to see wireframe in PDF format. This should take you to the file stored on github repository](https://github.com/Gaberoids/genealogygenius/blob/master/assets/readme_files/GeneologyGeniusMockup.pdf)
+- [Click here to see wireframe in PDF format. This should take you to the file stored on github repository](https://github.com/Gaberoids/MS3-gf-foodStorage-MongoDb/blob/master/ProjectMockup.pdf)
 
 ## Features
  
 - ### Existing Features
-    - Clickable buttons and links
-    - Form Contact Us page
-    - Photo gallery with zoom capability
-    - Navigation bar. Hamburger icon on mobile version 
-    - Send a message to genealogy consultant
-    - Email validation on contact us page
-    - Responsive Grid system
-    - Website supported by jasmine tests
-    - Icons and background image
+    - Database to store data.
+    - Capacity to CRUD the database.
+    - Login, registration and deletion for users.
+    - Search for items based on name and detail fields.
+    - Field validation.
 
 - ### Features Left to Implement
-    - To improve navigation bar style
-    - Ability to search in the web filtered by location.
-    - Improve the way images are displayed when they are zoomed in (index.html).
-    - Ability for users to visit consultant's social media and share the site.
-    - Consultant reviews ( 3 reviews).
+    - Notification and alert box before deleting items in the database or deleting profile.
+    - Sort table based on expiration data.
+    - To make expire items to stand out or generate notification and alerts when items expire.
 
 ## Technologies Used
 
 [Bootstrap](https://getbootstrap.com/docs/4.0/utilities/display/) 
-    - The navigation bar (in all pages), the photo gallery (Questions section) portions of the index.html, and contact us portion of contact.html page were built with a template from **bootstrap** to speed up development. However, the templates have been modified from its original for customization purposes.   
-
-[Google Fonts](https://fonts.google.com/)
-    - **Google Fonts** was used to style the fonts of the project.
-
-[Viewport](https://www.w3schools.com/css/css_rwd_viewport.asp) 
-    - Meta name **viewport** was also added in order to make the site responsive to different sizes of screen.
+    - The navigation bar (in all pages), the table, the login and registration pages.   
 
 [Javascript](https://www.javascript.com/)
-    - This technology was used to link APIs to the website (Google Search and Emailjs APIs)
+    - This technology was used to put a limit on the total number of characters on the areatext tag. 
 
 [Jquery](https://jquery.com/)
-    - This library was used to create an interactive User Interface (Zoom functionality found on the index.html "questions" sections)
+    - This library was used on the menu navigator. 
 
-[Jasmine](https://en.wikipedia.org/wiki/Jasmine_(JavaScript_testing_framework))
-    - This framework was used to test javascript code, such as the code that validate the email input text box found in the contact.html page 
+[Mongodb](https://www.mongodb.com/)
+    - This was used to host and manage the database. 
 
+[Heroku](https://heroku.com)
+    - This was used to host the website. 
 
 
 ## Testing
 
-Automated tests
-1. Email validation
-    - Go to https://gaberoids.github.io/genealogygenius/assets/readme_files/tests.html to see test results.
-    - The link to the test file: https://github.com/Gaberoids/genealogygenius/blob/master/assets/spec/calcSpecs.js .
-    - The link to the page where the function being tested is found: https://github.com/Gaberoids/genealogygenius/blob/master/assets/js/calc.js .
-
 Non-automated tests
-1. Navigation bar:
-    1. Go to the "Homapage" page
-    2. Click on all links and buttons to see if they work and take the user to the pages they meant to go.
-    3. Change the size of the screen to make sure that the navbar is presentable
-    4. Click the links and button again in different size of screens to verify they still work (mainly when hamburger icon shows).
+1. Security (user should only be able to CRUD if logged in) and login:
+    1. As a non-authenticated user go to homepage (https://ms3-food-store.herokuapp.com/).
+    2. Note that it is not possible to perform CRUD on the database. Buttons to add, edit and delete item are not visible.
+    3. On the menu navigator, click login.
+    4. Enter the following credentials: 
+        - Username: gab4
+        - Password: gab4
+    5. User gets logged in and is redirected to homepage.
+    6. Note that the menu item 'Add item' appear on the munu navigator.
+    7. Note that the icons to edit and delete items now appear on the table.
 
-2. "Questions" section of the homepage:
-    1. Go to the "Home" page (index.html)
-    2. Hover over the small pictures on the right side of the page and note the cursor turn into a magnifying glass.
-    3. Click the small pics and notice that they exchange position with with the pic placed on the big frame.  
-    4. Change sizes of the screens to make sure that the site is still presentable and functional on those sizes.
+2. Register and validation:
+    1. Go to the "Home" page (https://ms3-food-store.herokuapp.com/)
+    2. On the menu navigator, click login.
+    3. Click the link "Don't have an account? Register.".  
+    4. Enter Username and password of your choice.
+        - User won't be able to submit the form if the these inputs have less then 4 or more than 25 characters. 
+    5. User is created and taken to the homepage.TO BE CONTINUE...
 
 3. Search functionality:
     1. Go to the "geniusSearch.html" page and type "Perger" inside the search box.
