@@ -1,4 +1,4 @@
-# foodstorage.com ???
+# FoodStorageManagement.com
 
 This website is designed for people to manage their personal food storage efforts.
 
@@ -110,71 +110,65 @@ Non-automated tests
     4. Click submit. Note that the item was added to the table. If you cannot see it, try search to it.
     5. Click the "delete" icon by the new item and note that the item will no longer be found in the table.
 
+4. Mobile test:
+    1. Go to a mobile screen.
+    2. Perform all tests listed above.
+    3. Notice that the menu navigator is collapsable.
 
-**The pages in this website will be more simple in the mobile view compared to desktop view. For example:**
-- links in the menu navigator will be replaced by the hamburger icon.
-- In the index.html, the head shot from consultant will be removed on mobile screen.
 
 **Bugs:**  
-- There is an error message on index.html. It says "Uncaught TypeError: Cannot read property 'step' of undefined.". According to my research, this error has to do with Jquery CDNs. This bug is not breaking the page right now, so I left it alone for now.
+- There is an error message on that shows up sometimes on the console. The error is about favicon.ico. According to information found on slack, this can be ignored. See details in the following link: ???
+    - https://code-institute-room.slack.com/archives/C7EJUQT2N/p1613656600182700?thread_ts=1613656263.182600&cid=C7EJUQT2N
 
 ## Deployment
 
-Link to the github repository https://github.com/Gaberoids/genealogygenius .
+Link to the github repository https://github.com/Gaberoids/MS3-gf-foodStorage-MongoDb .
 
-Link to the deployed site https://gaberoids.github.io/genealogygenius/ .
+Link to the Heroku site that is deploying the project https://dashboard.heroku.com/apps/ms3-food-store . ???
+
+Link to the deployed site https://ms3-food-store.herokuapp.com/ .
 
 Deplyed and development versions have no differences.
 
 **Deployment steps:**
-1. Go to the link https://github.com/Gaberoids/genealogygenius .
-2. Click the tab "Settings".
-3. Under the section "HUB Pages" click the drop down button under "Source" and select "Master Branch".
-4. Go to under the "HUB Pages" section again, and click on the link. This link is the address to the deployed site.
+1. Go to heroku and create the app
+	1. Login to heroku and Click “new” > “Create new app”
+	2. give a name
+	3. enter region (USA) or Europe. (the region closest to you)
+	4. Click Create
+	5. Select GitHub from “Deployment method”
+	6. (You may need to connect your github here in this same place before the following step) on the section “Connect to Github” choose the repository (cartman1978) and enter the repository name that you are using to build the app (St-patrick-s-day-tour). Click search, find the repository, and click connect
+	7. Go to “settings” (it is a menu item )
+		1. click the button “reveal config vars”
+		2. enter the default environment variables from env.py file (enter only the stuff inside the parenteses in the env.py. Like (“Key”, “Value”)
+	8. If not done yet, Go to gitPod and commit and push the procfile and requirements.txt
+	9. Go back to heroku to deploy page
+		1. CLick “enable automatic deployment”
+		2. Click “deploy branch”
+2. Go to terminal in gitpod (This step may not be necessary. Use it if you needed it)
+	1. type:
+		1. pip3 install flask-pymongo
+		2. pip3 install dnspython (to use mongo snd connection string)
+		3. pip3 freeze - -local > requirements.txt (to update the requirements.txt file)
 
 **Cloning Repository steps:**
-1. Go to the link https://github.com/Gaberoids/genealogygenius .
+1. Go to the link https://github.com/Gaberoids/MS3-gf-foodStorage-MongoDb .
 2. Click the green button "Code".
 3. Select the option "Download Zip".
 (For more information on how to clone the repository, visit https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
 
 
 ## Credits
-- My tutor at code academy Moosa. He helped me with directions on how to how to improve the visual presentation of the site and helped me with some the jasmine test.
-- Special thanks to [TMS Tree icon by Icons8](https://icons8.com/icon/34828/tms-tree) for providing the cool logo for this website.
+- My tutor at code academy Moosa. He helped me with directions on how to how to improve the visual presentation of the site.
+- Special thanks to open source codes such as bootstrap, ionicon, and the coding comunities/forums such as StackOverflow, Reddit, etc.
 
 ### Content
 - The content of this website is original.
 
 ### Media - Source of all pictures that are not original
-* #### Index.html page
-    * ##### Cover
-        - [cover-tree.jpg](https://www.freeimages.com/photo/trees-1393133)
-    * ##### Question Section
-        * ###### How they look like?
-            -  [old-headshot.jpg](https://www.freeimages.com/photo/old-framed-picture-1433232)
-            -  [old-photos-multiple.jpg](https://www.freeimages.com/photo/old-photos-1434448)
-            -  [old-family-bench](https://www.freeimages.com/photo/old-family-photo-2-1433934)
-            -  [old-family-portrait](https://www.freeimages.com/photo/old-time-family-photo-1311342)
-        * ###### Where they came from?
-            -  [where_castle.jpg](https://www.freeimages.com/photo/irish-abbey-1214069)
-            -  [where_africa.jpg](https://www.freeimages.com/photo/africa-1406054)
-            -  [where_india.jpg](https://www.freeimages.com/photo/taj-1307962)
-            -  [where_china.jpg](https://www.freeimages.com/photo/theatre-stage-1235519)
-        * ###### How they came from?
-            -  [how-wagon.jpg](https://unsplash.com/photos/QFhIVlX9wTs)
-            -  [how-ship.jpg](https://www.freeimages.com/photo/sailing-ship-in-harbor-1450308)
-            -  [how-train.jpg](https://www.freeimages.com/photo/steam-locomotive-1447997)
-            -  [how-car.jpg](https://www.freeimages.com/photo/my-granny-in-old-car-1440617)
-
-* ### Contact.html page
-    -  [contact-tree.jpg](https://www.freeimages.com/photo/tree-on-the-hill-1385676)
-
-* ### Search.html page
-    -  [search-bk-image.jpg](https://www.freeimages.com/photo/old-family-photos-1423774)
+    - This website does not contain images.
 
 ### Acknowledgements
 
-I received inspiration for this project from [Codeacademy](https://courses.codeinstitute.net/).
-- The modal functionality and the Mobil hemburger buttons were built inspired on templates from bootstrap.
+I received inspiration for this project from [Codeacademy](https://courses.codeinstitute.net/) classes.
  
