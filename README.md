@@ -119,6 +119,13 @@ Non-automated tests
 **Bugs:**  
 - There is an error message on that shows up sometimes on the console. The error is about favicon.ico. According to information found on slack, this can be ignored. See details in the following link: ???
     - https://code-institute-room.slack.com/archives/C7EJUQT2N/p1613656600182700?thread_ts=1613656263.182600&cid=C7EJUQT2N
+- Found 500 error on search page when running the page on a Code validator site.
+    - See: https://validator.w3.org/nu/?doc=http%3A%2F%2Fms3-food-store.herokuapp.com%2Fsearch
+    - This error is not relevant for the search page because the page needs a search term to work with.
+- In a css validator, the following error was found:
+    - "Value Error : speak none is not a speak value : none"
+    - This error came from a 3rd party library. See https://generatepress.com/forums/topic/css-speak-none-is-not-a-speak-value/ .
+
 
 ## Deployment
 

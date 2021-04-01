@@ -18,7 +18,7 @@ a:hover {
 
 h3 i {
     margin: 0 0.3em;
-    color: #293f7dfa; ??
+    color: #293f7dfa;
 }
 /* ---------------------------------------------- Base.html css */
 
@@ -57,6 +57,11 @@ h3 i {
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: rgb(80 43 25);
+}
+
+.btn-outline-success {
+    color: #8a3c24;
+    border-color: #8a3c24;
 }
 
 /* ---------------------------------------------- All Items.html css */
@@ -228,7 +233,3 @@ h3 {
 .login-form {
     /* margin-top: 16%; */
 }
-
-
-/* ---------------------------------------------- Login css */
-

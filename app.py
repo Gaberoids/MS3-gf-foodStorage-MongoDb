@@ -84,7 +84,8 @@ def login():
                     "password"], request.form.get("login_password")):
                 session["user_session"] = request.form.get(
                     "login_username").lower()
-                flash("Welcome, {}!".format(request.form.get("login_username")))
+                flash("Welcome, {}!".format(
+                    request.form.get("login_username")))
                 return redirect(url_for(
                     "get_items", profile_username=session["user_session"]))
 
