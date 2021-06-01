@@ -144,13 +144,13 @@ Deplyed and development versions have no differences.
 	3. enter region (USA) or Europe. (the region closest to you)
 	4. Click Create
 	5. Select GitHub from “Deployment method”
-	6. (You may need to connect your github here in this same place before the following step) on the section “Connect to Github” choose the repository (cartman1978) and enter the repository name that you are using to build the app (St-patrick-s-day-tour). Click search, find the repository, and click connect
+	6. (You may need to connect your github here in this same place before the following step) on the section “Connect to Github” choose the repository you want and enter the repository name that you are using to build the app. Click search, find the repository, and click connect.
 	7. Go to “settings” (it is a menu item )
 		1. click the button “reveal config vars”
 		2. enter the default environment variables from env.py file (enter only the stuff inside the parenteses in the env.py. Like (“Key”, “Value”)
 	8. If not done yet, Go to gitPod and commit and push the procfile and requirements.txt
 	9. Go back to heroku to deploy page
-		1. CLick “enable automatic deployment”
+		1. Click “enable automatic deployment”
 		2. Click “deploy branch”
 2. Go to terminal in gitpod (This step may not be necessary. Use it if you needed it)
 	1. type:
@@ -173,7 +173,7 @@ Deplyed and development versions have no differences.
 - The content of this website is original.
 
 ### Media - Source of all pictures that are not original
-    - This website does not contain images.
+    - This website does not contain images that are not original.
 
 ### Acknowledgements
 
