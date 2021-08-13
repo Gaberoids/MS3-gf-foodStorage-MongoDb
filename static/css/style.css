@@ -64,6 +64,10 @@ h3 i {
     border-color: #8a3c24;
 }
 
+.navbar-light .navbar-brand:hover {
+    color: #5b250bd4;
+    font-weight: normal;
+}
 /* ---------------------------------------------- All Items.html css */
 
 .profile-box {
