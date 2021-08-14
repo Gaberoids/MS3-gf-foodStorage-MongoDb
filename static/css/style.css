@@ -111,6 +111,10 @@ hr.hr-profile {
     overflow: auto;
 }
 
+.t-background th {
+    text-align: center;
+}
+
 /* ---------------------------------------------- other html css */
 
 h3 {

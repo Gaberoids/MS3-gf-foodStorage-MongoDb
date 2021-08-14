@@ -40,6 +40,8 @@ __Link to wireframe:__
     - Sort table based on expiration data.
     - To make expire items to stand out or generate notification and alerts when items expire.
     - Validation to date field on other browsers than Chrome.
+    - Table style: text vertical alignment for the fields but Descrition column
+    
 
 ## Technologies Used
 
