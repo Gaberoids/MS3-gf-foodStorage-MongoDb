@@ -31,6 +31,7 @@ h3 i {
 
 .t-background {
     background-color: rgba(248, 249, 250, 0.5);
+    max-width: 800px;
 }
 
 /* navbar customizations */
@@ -104,7 +105,7 @@ hr.hr-profile {
 }
 
 .table-cell-limitations {
-    max-width: 150px;
+    max-width: 95%;
     max-height: 150px;
     word-wrap: break-word; 
     overflow: auto;
