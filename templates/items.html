@@ -56,12 +56,13 @@
                     {% else %}
                     <td></td>
                     {% endif %}
-
+                    
                     <th scope="row"><div class="table-cell-limitations">{{ itm.item }}</div></th>
                     <td>
-                        <div class="table-cell-limitations">{{ itm.item_details }}</div>
+                        <div class="table-cell-limitations">{% if itm.item_details %}{{ itm.item_details }}{% else %}<p
+                                style="text-align: center;"> - </p>{% endif %}</div>
                     </td>
-                    <td>{{ itm.quantity }}</td>
+                    <td>{% if itm.quantity %}{{ itm.quantity }}{% else %}<p style="text-align: center;"> - </p>{% endif %}</td>
                     <td>{{ itm.expiration_date }}</td>
                 </tr>
             </tbody>
