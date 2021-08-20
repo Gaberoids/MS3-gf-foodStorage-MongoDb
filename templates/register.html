@@ -12,8 +12,8 @@
         <form method="post" class="login-form">
             <h2 class="sr-only">Register Form</h2>
             <div class="illustration"><i class="icon ion-ios-personadd-outline"></i></div>
-            <div class="form-group"><input class="form-control" type="text" name="registration_username" placeholder="Username" minlength="3" maxlength="25" ></div>
-            <div class="form-group"><input class="form-control" type="password" name="registration_password" placeholder="Password" minlength="3" maxlength="25">
+            <div class="form-group"><input class="form-control" type="text" name="registration_username" placeholder="Username" minlength="3" maxlength="25" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="registration_password" placeholder="Password" minlength="3" maxlength="25" required>
             </div>
             <div class="form-group"><button class="btn btn-primary btn-block login-reg-btns" type="submit">Register</button></div>
             <a href="{{ url_for('login') }}"

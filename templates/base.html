@@ -44,7 +44,7 @@
                 <!-- if the user is logged, show the home, add item and logout button -->
                 {% if session.user_session %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.url_rule.endpoint == "add_item" %} active {% endif %}" href="{{ url_for('add_item') }}">Add Item</a>
+                        <a class="nav-link {% if request.url_rule.endpoint == "add_item" %} active {% endif %}" href="{{ url_for('add_item', profile_username=profile_username) }}">Add Item</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
@@ -65,12 +65,30 @@
     {% if messages %}
     {% for message in messages %}
     <div class="">
-        <p class="flash-message bg-primary">{{ message }}</p>
+        <p class="flash-message bg-primary text-center">{{ message }}</p>
     </div>
     {% endfor %}
     {% endif %}
     {% endwith %}
     <div class="site-background">
+<!-- user profile name and delete account -->
+        {% if session.user_session %}
+        <div class="">
+            <div class="profile-box">
+                <div class="">
+                    <h5 class="user-profile-id pt-1"> {{ profile_username[0]|upper }}{{ profile_username[1:] }}'s Homepage!</h5>
+                </div>
+                <hr class="hr-profile">
+                <div class="">
+                    <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}" class="delete-acc-link">
+                        <!-- profile_id is defined(comes from) from get_items(). 
+                            user_id is defined here to be used by delete() -->
+                        <h6 class=" pt-1"> Delete Account</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
 
         {% block content %}
 

@@ -127,8 +127,8 @@ def delete_user(delete_profile_id):
     return redirect(url_for("get_items"))
 
 
-@app.route('/add_item', methods=["GET", "POST"])
-def add_item():
+@app.route("/add_item/<profile_username>", methods=["GET", "POST"])
+def add_item(profile_username):
     if request.method == "POST":
         new_item = {
             "item": request.form.get("n_item"),
@@ -139,6 +139,13 @@ def add_item():
         mongo.db.items.insert_one(new_item)
         flash("Food item successfully added.")
         return redirect(url_for('get_items'))
+    
+    if session.get('user_session') is not None:
+        p_username = profile_username
+        return render_template(
+            "add_item.html",
+            profile_username=p_username)
+
     return render_template("add_item.html")
 
 
