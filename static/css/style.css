@@ -77,6 +77,12 @@ h3 i {
     background-color: #3f538b;
     border-color: #3f538b;
 }
+
+/* search results page */
+#navbar-c button:focus {
+    outline: 1px dotted rgb(1 27 98);
+    outline: 5px auto rgb(1 27 98);
+}
 /* ---------------------------------------------- All Items.html css */
 
 .profile-box {
@@ -160,8 +166,14 @@ h3 {
 }
 
 .cancel-button {
-    background-color: #f68511;
+    background-color: #2d4380;
+    border-color: #2d4380;
     width: 160px;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(1 27 98);
+    border-color: rgb(1 27 98);
 }
 /* ---------------------------------------------- edit.html add.html pages css */
 
