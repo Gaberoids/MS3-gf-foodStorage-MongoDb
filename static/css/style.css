@@ -41,13 +41,14 @@ h3 i {
 }
 
 .navbar-light .navbar-brand {
-    color: rgb(144 82 53 / 83%);
+    color: #2d4380;
 }
 
 .navbar-light .navbar-brand:hover {
-    color: rgb(144 82 53 / 83%);
-    font-weight: bolder;
+    color: rgb(1 27 98);
+    font-weight: normal;
 }
+    /* font-weight: bolder; */
 
 .navbar-light .navbar-nav .nav-link {
     color: rgb(144 82 53 / 83%);
@@ -65,9 +66,16 @@ h3 i {
     border-color: #8a3c24;
 }
 
-.navbar-light .navbar-brand:hover {
-    color: #5b250bd4;
-    font-weight: normal;
+/* ---------------------------------------------- Search */
+.btn-outline-success {
+    color: #3f538b;
+    border-color: #3f538b;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #3f538b;
+    border-color: #3f538b;
 }
 /* ---------------------------------------------- All Items.html css */
 
@@ -239,6 +247,11 @@ h3 {
   transform:translateY(1px);
 }
 
-.login-form {
-    /* margin-top: 16%; */
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+    background: rgb(1 27 98);
+    outline: none;
+}
+
+.login-registration-box {
+    padding-top: 7%;
 }
