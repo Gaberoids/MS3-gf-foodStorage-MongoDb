@@ -76,16 +76,24 @@
         <div class="">
             <div class="profile-box">
                 <div class="">
-                    <h5 class="user-profile-id pt-1"> Hello {{ profile_username[0]|upper }}{{ profile_username[1:] }}!</h5>
+                    <h5 class="user-profile-id pt-1"> {{ profile_username[0]|upper }}{{ profile_username[1:] }} is logged in!</h5>
                 </div>
                 <hr class="hr-profile">
-                <div class="">
-                    <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}" class="delete-acc-link">
+                <div class="text-center">
+                    <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}" class="btn btn-light">
                         <!-- profile_id is defined(comes from) from get_items(). 
-                            user_id is defined here to be used by delete() -->
-                        <h6 class=" pt-1"> Delete Account</h6>
+                                            user_id is defined here to be used by delete() -->
+                        <p class="delete-account"> Delete Account</p>
                     </a>
                 </div>
+                
+                <!-- <div class="">
+                    <a href="{{ url_for('delete_user', delete_profile_id=profile_id) }}" class="delete-acc-link">
+                        <!-- profile_id is defined(comes from) from get_items(). 
+                            user_id is defined here to be used by delete() --><!--
+                        <h6 class=" pt-1"> Delete Account</h6>
+                    </a>
+                </div> -->
             </div>
         </div>
         {% endif %}

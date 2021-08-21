@@ -97,19 +97,6 @@ def login():
     return render_template("login.html")
 
 
-# @app.route("/user_profile/<profile_username>")
-# def user_profile(profile_username):
-#     loggedin_user = mongo.db.users.find_one(
-#         {"username": session["user_session"]})["username"]
-#     if session["user_session"]:
-#         items_list = list(mongo.db.items.find())
-#         return render_template(
-#             "user_profile.html", profile_username=loggedin_user,
-#             items_l=items_list)
-
-#     return redirect(url_for("login"))
-
-
 @app.route("/logout")
 def logout():
     if session.get('user_session') is not None:
@@ -165,7 +152,7 @@ def edit_item(edit_item_id, profile_username):
     if session.get('user_session') is not None:
         p_username = profile_username
         return render_template(
-            "add_item.html",
+            "edit_item.html",
             profile_username=p_username)
 
     edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
