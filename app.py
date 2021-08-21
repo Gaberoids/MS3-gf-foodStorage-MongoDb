@@ -148,14 +148,15 @@ def edit_item(edit_item_id, profile_username):
         mongo.db.items.update({"_id": ObjectId(edit_item_id)}, edited_item)
         flash("Food item successfuly updated.")
         return redirect(url_for('get_items'))
-        
+    
+    edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
+    p_username = profile_username
     if session.get('user_session') is not None:
-        p_username = profile_username
         return render_template(
             "edit_item.html",
-            profile_username=p_username)
+            profile_username=p_username,
+            itm=edit_i)
 
-    edit_i = mongo.db.items.find_one({"_id": ObjectId(edit_item_id)})
     return render_template('edit_item.html', itm=edit_i)
 
 
