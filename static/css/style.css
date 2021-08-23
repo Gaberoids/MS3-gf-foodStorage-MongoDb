@@ -176,22 +176,25 @@ h3 {
     background-color: #2d4380;
     width: 160px;
 }
-
-.submit-button {
-    background-color: #1ea3e2;
-    width: 160px;
+.btn-secondary:hover {
+    background-color: rgb(1 27 98);
+    border-color: rgb(1 27 98);
 }
 
 .cancel-button {
+    background-color: #bc5c1e;
+    width: 160px;
+}
+.cancel-button:hover {
+    background-color: #f46a10;
+}
+
+.submit-button {
     background-color: #2d4380;
     border-color: #2d4380;
     width: 160px;
 }
 
-.btn-secondary:hover {
-    background-color: rgb(1 27 98);
-    border-color: rgb(1 27 98);
-}
 /* ---------------------------------------------- edit.html add.html pages css */
 
 .box-padding {

@@ -32,10 +32,10 @@
                     {% if session.user_session %}
                     <td>
                         <div class="table-button-box">
-                            <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d "><i
+                            <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d " data-toggle="tooltip" data-placement="top" title="Delete item" data-original-title="Delete item"><i
                                     class="ion-ios-trash"></i></a>
                             <a href="{{ url_for('edit_item', edit_item_id=itm._id, profile_username=profile_username) }}" class="table-icon-e"><i
-                                    class="ion-edit"></i></a>
+                                    class="ion-edit" data-toggle="tooltip" data-placement="bottom" title="Edit item" data-original-title="Edit item"></i></a>
                         </div>
                     </td>
                     {% else %}
@@ -62,4 +62,11 @@
     <a class="btn btn-secondary cancel-button" href="{{ url_for('get_items')}}">Refresh</a>
 </div>
 {% endif %}
+
+<!-- script to tooltip on delete and edit icons from https://getbootstrap.com/docs/4.0/components/tooltips/ -->
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 {% endblock%}
