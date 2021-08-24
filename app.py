@@ -32,6 +32,61 @@ def get_items():
 
     return render_template("items.html", items_l=items_list)
 
+@app.route("/sort_by_date/<profile_username>/<sort>", methods=['GET'])
+def sort_by_date(profile_username, sort):
+    sorting = 1 if sort == 'asc' else -1
+    items_list = list(list(mongo.db.items.aggregate([{'$sort':{'expiration_date': sorting}}])))
+    sort = sort
+    profile_username = profile_username
+    return render_template("items.html", items_l=items_list, profile_username=profile_username, sort=sort)
+
+# @app.route("/sort_by_date/<items_l>/<profile_username>", methods=['GET'])
+# def sort_by_date(items_l, profile_username):
+#     if session.get('user_session') is not None:
+#         p_username = profile_username
+
+#         if request.args.get:
+#             if 'sort' in request.args.get('sort'):
+#                 sortkey = request.args.get('sort')
+#                 print(sortkey)
+#                 sort = sortkey
+
+#                 if sortkey == 'asc':
+#                     sortkey == 'asc'
+#                     sorted_list = list(mongo.db.items.aggregate(
+#                         [{'$sort':{'expiration_date': 1}}]))
+
+#                 if sortkey == 'desc':
+#                     sortkey == 'desc'
+#                     sorted_list = list(mongo.db.items.aggregate(
+#                         [{'$sort':{'expiration_date': -1}}]))
+            
+#         return render_template(
+#             "items.html",
+#             profile_username=p_username,
+#             items_l=sorted_list,
+#             sort=sortkey)
+
+#     return redirect(url_for("login"))
+        
+        # if sort is "asc":
+        #     sorted_list = list(mongo.db.items.aggregate(
+        #         [{'$sort':{'expiration_date': -1}}]))
+        # return render_template(
+        #         "items.html",
+        #         profile_username=p_username,
+        #         items_l=sorted_list,
+        #         sort=sort)
+
+        # if sort is "desc"
+        #     sorted_list = list(mongo.db.items.aggregate(
+        #         [{'$sort':{'expiration_date': -1}}]))
+        #     return render_template(
+        #         "items.html",
+        #         profile_username=p_username,
+        #         items_l=sorted_list,
+        #         sort=sort)
+
 
 @app.route("/search", methods=["GET", "POST"])
 def search():

@@ -22,7 +22,16 @@
                     <th scope="col">Food Item</th>
                     <th scope="col">Details</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">Expiration Date</th>
+                    {% if sort == "asc" %}
+                    <th scope="col">Expiration Date <a
+                            href="{{ url_for('sort_by_date', profile_username=profile_username, sort='desc') }}"
+                            class="ion-funnel"></a></th>
+                    {% else %}
+                    <th scope="col">Expiration Date <a
+                            href="{{ url_for('sort_by_date', profile_username=profile_username, sort='asc') }}"
+                            class="ion-funnel"></a>
+                    </th>
+                    {% endif %}
                 </tr>
             </thead>
             {% for itm in items_l %}
@@ -32,22 +41,27 @@
                     {% if session.user_session %}
                     <td>
                         <div class="table-button-box">
-                            <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d " data-toggle="tooltip" data-placement="top" title="Delete item" data-original-title="Delete item"><i
-                                    class="ion-ios-trash"></i></a>
-                            <a href="{{ url_for('edit_item', edit_item_id=itm._id, profile_username=profile_username) }}" class="table-icon-e"><i
-                                    class="ion-edit" data-toggle="tooltip" data-placement="bottom" title="Edit item" data-original-title="Edit item"></i></a>
+                            <a href=" {{ url_for('delete_item', delete_item_id=itm._id) }}" class="table-icon-d "
+                                data-toggle="tooltip" data-placement="top" title="Delete item"
+                                data-original-title="Delete item"><i class="ion-ios-trash"></i></a>
+                            <a href="{{ url_for('edit_item', edit_item_id=itm._id, profile_username=profile_username) }}"
+                                class="table-icon-e"><i class="ion-edit" data-toggle="tooltip" data-placement="bottom"
+                                    title="Edit item" data-original-title="Edit item"></i></a>
                         </div>
                     </td>
                     {% else %}
                     <td></td>
                     {% endif %}
-                    
-                    <th scope="row"><div class="table-cell-limitations">{{ itm.item }}</div></th>
+
+                    <th scope="row">
+                        <div class="table-cell-limitations">{{ itm.item }}</div>
+                    </th>
                     <td>
                         <div class="table-cell-limitations">{% if itm.item_details %}{{ itm.item_details }}{% else %}<p
                                 style="text-align: center;"> - </p>{% endif %}</div>
                     </td>
-                    <td>{% if itm.quantity %}{{ itm.quantity }}{% else %}<p style="text-align: center;"> - </p>{% endif %}</td>
+                    <td>{% if itm.quantity %}{{ itm.quantity }}{% else %}<p style="text-align: center;"> - </p>{% endif
+                        %}</td>
                     <td>{{ itm.expiration_date }}</td>
                 </tr>
             </tbody>
