@@ -29,6 +29,12 @@ __Link to wireframe:__
 ## Features
  
 - ### Existing Features
+#### navigation
+The purpose of this navigation is to help user to easily find the login and search functionality.
+![Screen Shot 2021-08-25 at 22 18 31](https://user-images.githubusercontent.com/47679109/130899892-c74d43ed-20be-473e-b48b-b7605d705567.png)
+![Screen Shot 2021-08-25 at 22 19 22](https://user-images.githubusercontent.com/47679109/130899949-4326a69d-c210-4c1e-bec3-59363037f08d.png)
+
+
     - Database to store data.
     - Capacity to CRUD the database.
     - Login, registration and deletion for users.
