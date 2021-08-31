@@ -1,6 +1,21 @@
 # FoodStorageManagement.com
+![Screen Shot 2021-08-27 at 16 01 33](https://user-images.githubusercontent.com/47679109/131193070-0e8c5482-405d-413e-b95a-0887fbcd2d85.png)
 
-This website is designed for people to manage their personal food storage efforts.
+https://ms3-food-store.herokuapp.com/ - Tool for food storage management.
+
+## Author
+Gabriel Perguer Figueiro
+
+## Project Overview
+![Screen Shot 2021-08-27 at 16 06 28](https://user-images.githubusercontent.com/47679109/131193389-5e91a635-fa4b-4f96-8173-21e1299d1c77.png)
+https://ms3-food-store.herokuapp.com/
+This website is designed for people to manage their personal food storages. It allow the users to have an updated record of their food inventory. This can be done with food inventory managers updating, adding, removing records in the database.
+The website provide a simple user interface that is meant to be easy to use even for a person who is not technoligly confortable.
+
+- Include a picture of site that shows it in responsive states and links to deployed code: http://ami.responsivedesign.is/
+- One or two paragraphs providing an overview of your project.
+- Write this as a sales pitch or commercial making users want to purchase your website.
+- Include a link to your deployed website
 
 ## UX
  
