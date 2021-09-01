@@ -9,13 +9,59 @@ Gabriel Perguer Figueiro
 ## Project Overview
 ![Screen Shot 2021-08-27 at 16 06 28](https://user-images.githubusercontent.com/47679109/131193389-5e91a635-fa4b-4f96-8173-21e1299d1c77.png)
 https://ms3-food-store.herokuapp.com/
+
 This website is designed for people to manage their personal food storages. It allow the users to have an updated record of their food inventory. This can be done with food inventory managers updating, adding, removing records in the database.
 The website provide a simple user interface that is meant to be easy to use even for a person who is not technoligly confortable.
 
-- Include a picture of site that shows it in responsive states and links to deployed code: http://ami.responsivedesign.is/
-- One or two paragraphs providing an overview of your project.
-- Write this as a sales pitch or commercial making users want to purchase your website.
-- Include a link to your deployed website
+- deployed site: https://ms3-food-store.herokuapp.com/
+
+
+## HOW TO USE
+
+### Unauthenticated User
+- Look at the inventory table:
+	1. Go to the home page https://ms3-food-store.herokuapp.com/.
+	2. Note the table in the middle of the page.
+	3. The header of the table indicates the content on the table.
+- Login
+	1. Go to the home page https://ms3-food-store.herokuapp.com/.
+	2. On the menu navigator click the option 'Login' (if the option 'Login' does not appear once the page is loaded click the hamburger icon, then click the option 'Login)
+	3. In the middle of the page, enter credential:
+		- Username: gab1
+		- Password: gab1
+	4. Click the button 'Log in'.
+	5. Note that the user user is successfuly logged in because:
+ 		-  a welcome message in blue below the menu navigation confirm that the user successfully logged in.
+ 		-  user is redirected to the homepage.
+ 		-  Below the menu navigator to the left side of the page, there is a text indicating the name of the user that is currently logged in. Also, the button to delete the user account is presented below the mentioned text.
+
+- Register
+	1. Go to the home page https://ms3-food-store.herokuapp.com/.
+	2. On the menu navigator click the option 'Login' (if the option 'Login' does not appear once the page is loaded click the hamburger icon, then click the option 'Login)
+	3. In the middle of the page, just below the text box to enter credetional you will find a sentence that says:
+		- "Don't have an account? Register"
+	4. To registe enter a username and password on the text spaces that says 'Username' and 'Password'.
+		- The username and password must be 3-25 characters long.
+ 
+- Searching on the table. Search result will search for the key words withing the fields name and description.
+	1. Go to the home page https://ms3-food-store.herokuapp.com/.
+	2. On the menu navigator click the text box found on the right side of the menunavigator (if the text box is not showing right away after the page is loaded, click the hamburger icon see the text box).
+	3. Type a word in the text box.
+	4. Click the button 'Search' that is found on the right side of the text box.
+	5. If the the work is found withing the table columns 'Name' or 'Detail', the page will refresh and the table in the center of the page will show only items that have the key word(s) in the 'Name' or 'Detail' field.
+	6. If the key word(s) is not found within the 'Name' or 'Detail' column, then a message saying "There are no food items to list" and a button to refresh the page will show below this message. This button will refresh the page without search results.
+
+- Sort the table based on the expitation date:
+	1. Go to the home page https://ms3-food-store.herokuapp.com/.
+	2. On the table column 'Expiration Date', click on the blue icon that looks like a funel.
+	3. The page will refresh and show the same table sorted by 'Expiration Date' values in ascending order.
+
+
+### Authenticated users:
+- Username and password for a user that is established in the system (set up this user to have some order history)
+
+### Admin User
+- only necessary if some functionality is limited to admin users only
 
 ## UX
  
@@ -27,6 +73,7 @@ Answer: The user would like to have make sure that their foodstorage is well man
 
 3- How your project is the best way to help them achieve these things?  
 Answer: The website provide a way for the house holder to remotelly check on the current state of it's food storage. The website will contain information fundamental for food storage management such as food name, quantity, description, expiration dates. It also allow food storage owner to personally update the food storage database to reflect changes on the fisical food storage space.
+
 
 __User Stories:__   
   
